@@ -1,10 +1,13 @@
-import 'package:ai_assestant/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:overlay_support/overlay_support.dart';
 
+import '../controllers/home_controller.dart';
+
 class MyHomePage extends StatelessWidget {
   final HomeController _homeController = Get.put(HomeController());
+
+  MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,24 +29,26 @@ class MyHomePage extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(16),
+                // Wrap only this part with Obx since it depends on reactive variables
                 child: Obx(() => Text(
-                  _homeController.speechToText.isListening
+                  _homeController.isListening.value
                       ? _homeController.lastWords.value
                       : _homeController.speechEnabled.value
-                          ? 'Tap the microphone to start listening...'
-                          : 'Speech not available',
+                      ? 'Tap the microphone to start listening...'
+                      : 'Speech not available',
                 )),
               ),
             ),
           ],
         ),
       ),
+      // Wrap the floatingActionButton with Obx
       floatingActionButton: Obx(() => FloatingActionButton(
-        onPressed: _homeController.speechToText.isNotListening
-            ? _homeController.startListening
-            : _homeController.stopListening,
+        onPressed: _homeController.isListening.value
+            ? _homeController.stopListening
+            : _homeController.startListening,
         tooltip: 'Listen',
-        child: Icon(_homeController.speechToText.isNotListening ? Icons.mic_off : Icons.mic),
+        child: Icon(_homeController.isListening.value ? Icons.mic : Icons.mic_off),
       )),
     );
   }

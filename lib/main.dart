@@ -2,6 +2,7 @@ import 'package:ai_assestant/ui/home.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
+import 'package:get/get.dart';
 import 'package:overlay_support/overlay_support.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OverlaySupport.global(
-      child: MaterialApp(
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Ai Assistance',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

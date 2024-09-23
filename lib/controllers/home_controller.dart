@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
-
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 
 class HomeController extends GetxController {
@@ -46,7 +45,7 @@ class HomeController extends GetxController {
   }
 
   void onSpeechResult(SpeechRecognitionResult result) {
-  if (result.recognizedWords.toLowerCase() == "Hi") {
+  if (result.recognizedWords.toLowerCase() == "start") {
     lastWords.value = "Listening for commands...";
     startListening();
   } else if (result.recognizedWords.toLowerCase() == "stop listening") {

@@ -1,6 +1,7 @@
 # This is a generated file; do not edit or check into version control.
 flutter_foreground_task=/Users/mac/.pub-cache/hosted/pub.dev/flutter_foreground_task-8.8.1+1/
-flutter_tts=/Users/mac/.pub-cache/hosted/pub.dev/flutter_tts-4.0.2/
+flutter_overlay_window=/Users/mac/.pub-cache/hosted/pub.dev/flutter_overlay_window-0.4.5/
+flutter_tts=/Users/mac/.pub-cache/hosted/pub.dev/flutter_tts-3.8.5/
 path_provider_linux=/Users/mac/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
 path_provider_windows=/Users/mac/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0/
 shared_preferences=/Users/mac/.pub-cache/hosted/pub.dev/shared_preferences-2.3.2/
